@@ -13,10 +13,8 @@
 <script type="text/javascript">
 function validateForm() {
 	  let age = document.forms["hf"]["age"].value;
-	  let bp = document.forms["hf"]["bp"].value;
-	  let sugar = document.forms["hf"]["sugar"].value;
 	  let date = document.forms["hf"]["date"].value;
-	  if (age.length == 0 || bp.length == 0 || sugar.length == 0 || date.length == 0)  {
+	  if (age.length == 0 || date.length == 0)  {
 	    alert("All fields must be filled out");
 	    return false;
 	  }
@@ -27,20 +25,28 @@ function validateForm() {
 	<div class = "container pt-3">
 	<form:form action = "saveForm" modelAttribute = "health" name="hf" onsubmit="return validateForm()">
 		<div class = "form-group">
-			<label for = "age">Age * </label>
-			<form:input path="age" class = "form-control" name = "age"/>
+			<label for = "age">Age *</label>
+			<form:input path="age" class = "form-control" name = "age" onfocus = "this.value=''"/>
 		</div>
 		<div class = "form-group">
-			<label for = "bp">Blood pressure *</label>
-			<form:input path="bp" class = "form-control" placeholder = "Normal Range : 80-120" name = "bp"/>
+			<label for = "bp">Blood pressure </label>
+			<form:input path="bp" class = "form-control" placeholder = "Normal Range : 80-120" name = "bp" onfocus = "this.value=''"/>
 		</div>
 		<div class = "form-group">
-			<label for = "sugar">Sugar Level (Fasting) *</label>
-			<form:input path="sugar" class = "form-control" placeholder = "Normal Range : 40 - 100" name = "sugar"/>
+			<label for = "sugar">Sugar Level (Fasting) </label>
+			<form:input path="sugar" class = "form-control" placeholder = "Normal Range : 40 - 100" name = "sugar" onfocus = "this.value=''"/>
+		</div>
+		<div class = "form-group">
+			<label for = "weight">Weight </label>
+			<form:input path="weight" class = "form-control" name = "weight" onfocus = "this.value=''"/>&nbsp; KG
+		</div>
+		<div class = "form-group">
+			<label for = "height">Height </label>
+			<form:input path="height" class = "form-control" name = "height" onfocus = "this.value=''"/>&nbsp; meter
 		</div>
 		<div class = "form-group">
 			<label for = "date">Date *</label>
-			<form:input path="date" class = "form-control" placeholder = "DD.MM.YYYY" name = "date"/>
+			<form:input path="date" type = "date" class = "form-control" placeholder = "DD.MM.YYYY" name = "date"/>
 		</div>
 		<button type = "submit" class = "btn btn-success">Submit</button>
 	</form:form>

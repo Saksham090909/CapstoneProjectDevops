@@ -1,6 +1,9 @@
 package com.sin.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class HealthManagement {
@@ -9,34 +12,53 @@ public class HealthManagement {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idrow;
 	
-	private String bp;
-	private String sugar;
-	private String age;
+	private int bp;
+	private int sugar;
+	private int age;
+	private double weight;
+	private double height;
 	private String date;
 	
-	public String getBp() {
-		return bp;
-	}
-	public void setBp(String bp) {
-		this.bp = bp;
-	}
-	public String getSugar() {
-		return sugar;
-	}
-	public void setSugar(String sugar) {
-		this.sugar = sugar;
-	}
-	public String getAge() {
-		return age;
-	}
-	public void setAge(String age) {
-		this.age = age;
-	}
 	public int getIdrow() {
 		return idrow;
 	}
 	public void setIdrow(int idrow) {
 		this.idrow = idrow;
+	}
+	public int getBp() {
+		return bp;
+	}
+	public void setBp(int bp) {
+		this.bp = bp;
+	}
+	public int getSugar() {
+		return sugar;
+	}
+	public void setSugar(int sugar) {
+		this.sugar = sugar;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public double getWeight() {
+		return weight;
+	}
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	public double getHeight() {
+		return height;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	@Override
+	public String toString() {
+		return "HealthManagement [idrow=" + idrow + ", bp=" + bp + ", sugar=" + sugar + ", age=" + age + ", weight="
+				+ weight + ", height=" + height + ", date=" + date + "]";
 	}
 	public String getDate() {
 		return date;
@@ -44,53 +66,5 @@ public class HealthManagement {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((age == null) ? 0 : age.hashCode());
-		result = prime * result + ((bp == null) ? 0 : bp.hashCode());
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + idrow;
-		result = prime * result + ((sugar == null) ? 0 : sugar.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		HealthManagement other = (HealthManagement) obj;
-		if (age == null) {
-			if (other.age != null)
-				return false;
-		} else if (!age.equals(other.age))
-			return false;
-		if (bp == null) {
-			if (other.bp != null)
-				return false;
-		} else if (!bp.equals(other.bp))
-			return false;
-		if (date == null) {
-			if (other.date != null)
-				return false;
-		} else if (!date.equals(other.date))
-			return false;
-		if (idrow != other.idrow)
-			return false;
-		if (sugar == null) {
-			if (other.sugar != null)
-				return false;
-		} else if (!sugar.equals(other.sugar))
-			return false;
-		return true;
-	}
-	@Override
-	public String toString() {
-		return "HealthManagement [idrow=" + idrow + ", bp=" + bp + ", sugar=" + sugar + ", age=" + age + ", date="
-				+ date + "]";
-	}
+	
 }
