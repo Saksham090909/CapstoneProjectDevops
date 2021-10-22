@@ -25,19 +25,34 @@
 				<tr>
 				<td>${h.idrow}</td>
 				<c:choose>
-					<c:when test="${h.bp < 80}"><td bgcolor="#FF00FF">${h.bp}</td></c:when>
-					<c:when test="${h.bp > 120}"><td bgcolor="red">${h.bp}</td></c:when>
-					<c:otherwise ><td>${h.bp}</td></c:otherwise>
+					<c:when test="${h.bp > 0}">
+						<c:choose>
+							<c:when test="${h.bp < 80}"><td bgcolor="#FF00FF">${h.bp}</td></c:when>
+							<c:when test="${h.bp > 120}"><td bgcolor="red">${h.bp}</td></c:when>
+							<c:otherwise ><td>${h.bp}</td></c:otherwise>
+						</c:choose>
+					</c:when>
+					<c:otherwise ><td>-</td></c:otherwise>
 				</c:choose>
 				<c:choose>
-					<c:when test="${h.sugar < 40}"><td bgcolor="#FF00FF">${h.sugar}</td></c:when>
-					<c:when test="${h.sugar > 100}"><td bgcolor="red">${h.sugar}</td></c:when>
-					<c:otherwise><td>${h.sugar}</td></c:otherwise>
+					<c:when test="${h.sugar > 0}">
+						<c:choose>
+							<c:when test="${h.sugar < 40}"><td bgcolor="#FF00FF">${h.sugar}</td></c:when>
+							<c:when test="${h.sugar > 100}"><td bgcolor="red">${h.sugar}</td></c:when>
+							<c:otherwise><td>${h.sugar}</td></c:otherwise>
+						</c:choose>
+					</c:when>
+					<c:otherwise ><td>-</td></c:otherwise>
 				</c:choose>
-					<c:choose>
-					<c:when test="${(h.weight)/((h.height)*(h.height)) < 18.5}"><td bgcolor="#FF00FF">${(h.weight)/((h.height)*(h.height))}</td></c:when>
-					<c:when test="${(h.weight)/((h.height)*(h.height)) > 24.9}"><td bgcolor="red">${(h.weight)/((h.height)*(h.height))}</td></c:when>
-					<c:otherwise><td>${(h.weight)/((h.height)*(h.height))}</td></c:otherwise>
+				<c:choose>
+					<c:when test="${(h.weight)*(h.height) > 0}">
+						<c:choose>
+							<c:when test="${(h.weight)/((h.height)*(h.height)) < 18.5}"><td bgcolor="#FF00FF">${(h.weight)/((h.height)*(h.height))}</td></c:when>
+							<c:when test="${(h.weight)/((h.height)*(h.height)) > 24.9}"><td bgcolor="red">${(h.weight)/((h.height)*(h.height))}</td></c:when>
+							<c:otherwise><td>${(h.weight)/((h.height)*(h.height))}</td></c:otherwise>
+						</c:choose>
+					</c:when>
+					<c:otherwise ><td>-</td></c:otherwise>
 				</c:choose>
 				<td>${h.date}</td>
 				</tr>
