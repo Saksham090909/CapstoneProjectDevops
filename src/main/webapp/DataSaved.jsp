@@ -9,8 +9,10 @@
 <title>Info Saved</title>
 </head>
 <body>
-	<h1>Your Information is saved successfully, and safely available with us.</h1>
-	<h2>Thank you for using our application.</h2>
-	<a href="/showDetails" class = "btn btn-primary">See Analysis</a>
+	<div class = "container my-4">
+		<h1>Your Information is saved successfully, and safely available with us.</h1>
+		<h2>Thank you for using our application.</h2>
+		<a href="/showDetails" class = "btn btn-primary">See Analysis</a>
+	</div>
 </body>
 </html>

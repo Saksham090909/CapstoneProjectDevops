@@ -9,7 +9,9 @@
 <title>Index</title>
 </head>
 <body>
-	<h1>Welcome to Health Management App.</h1>
-	<a href="/healthForm" class = "btn btn-primary">Fill Information</a>
+	<div class = "container my-4">
+		<h1>Welcome to Health Management App.</h1>
+		<a href="/healthForm" class = "btn btn-primary" >Fill Information</a>
+	</div>
 </body>
 </html>
