@@ -65,7 +65,7 @@
 		</div>
 	</c:if>
 	<div class = "container my-4">
-		<a href="/healthForm" class = "btn btn-primary">Add Records</a>
+		<a href="/HealthManagementApp/healthForm" class = "btn btn-primary">Add Records</a>
 		<h5>RED : Above Normal Range</h5>
 		<h5>MAGENTA : Below Normal Range</h5>
 		<h5 style = "color:red">If BP or Sugar is above/below normal range, please consult doctor.</h5>

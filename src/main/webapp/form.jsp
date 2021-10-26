@@ -29,7 +29,7 @@ function validateForm() {
 <body>
 	<div class = "container pt-3">
 	<h1>Please Fill All Details : </h1>
-	<form:form action = "saveForm" modelAttribute = "health" name="hf" onsubmit="return validateForm()">
+	<form:form action = "/HealthManagementApp/saveForm" modelAttribute = "health" name="hf" onsubmit="return validateForm()" method="post">
 		<div class = "form-group">
 			<label for = "name">Name </label>
 			<form:input path="name" class = "form-control" name = "name" onfocus = "this.value=''"/>

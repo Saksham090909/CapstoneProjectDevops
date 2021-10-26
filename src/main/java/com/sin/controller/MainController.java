@@ -14,27 +14,28 @@ public class MainController {
 
 	@Autowired
 	Service service;
-	
+
 	@RequestMapping("/")
 	public String indexMethod() {
 		return "index.jsp";
 	}
-	
+
 	@RequestMapping("/healthForm")
 	public String formMethod(Model m) {
 		m.addAttribute("health", new HealthManagement());
-		return "form.jsp";
+		return "form";
 	}
-	
+
 	@RequestMapping("/saveForm")
-	public String saveForm(@ModelAttribute ("health") HealthManagement health, Model m) throws Exception {
+	public String saveForm(@ModelAttribute("health") HealthManagement health, Model m) throws Exception {
 		service.save(health);
-		return "DataSaved.jsp";
+		return "DataSaved";
 	}
-	
+
 	@RequestMapping("/showDetails")
 	public String showDetails(Model m) throws Exception {
 		m.addAttribute("list", service.findall());
-		return "Data.jsp";
+		return "Data";
 	}
+	
 }
